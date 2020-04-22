@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ad0pt - Pet Adoptions Made Friendlier</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Favicon -->
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap"
+      rel="stylesheet"
+    />
+	
+	<style>
+		.message {
+			color: white;
+			text-align:center;
+			font-weight: 800;
+			font-family: sans-serif;
+			font-size: 12pt;
+		}
+		.message.success {
+			color: #00C000;
+		}
+		.message.error {
+			color:red;
+		}
+	</style>
+	
+	<script>
+		function handleLogin() {
+			var resp = JSON.parse(this.response);
+			var div = document.forms[0].children.message;
+			if(resp.message) {
+				div.innerText = resp.message;
+			}
+			if(resp.success) {
+				div.className = "message success";
+				setTimeout(function(){ window.location.href = "index.php"; }, 1500);
+			} else {
+				div.className = "message error";
+			}
+		}
+		function doLogin(form) {
+			document.forms[0].children.message.innerText = "";
+			var xhr = new XMLHttpRequest();
+			xhr.addEventListener("load", handleLogin);
+			xhr.open("POST", "api/login.php", true);
+			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			xhr.send(encodeURI("email=" + form.elements.login_email.value + "&password=" + form.elements.login_password.value));
+		}
+	</script>
+  </head>
+  <header></header>
+  <body>
+    <div class="container">
+      <img src="images/logo_red_circle.png" alt="ad0pt Logo" class="logo" />
+      <form id="form" class="form">
+        <h2>Login With ad0pt</h2>
+		<div id="message" class="message"></div>
+        <div class="form-control">
+          <label for="login_email">Email</label>
+          <input id="login_email" name="email" type="text" placeholder="Enter email" />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="login_password">Password</label>
+          <input
+            id="login_password"
+            type="password"
+			name="password"
+            placeholder="Enter password"
+          />
+          <small>Error message</small>
+        </div>
+        <button id="submitbtn" type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="nav">
+      <ul class="navl">
+        <li><a href="account_creation.php">PROFILE</a></li>
+        <li><a href="login.php">FEATURED</a></li>
+        <li><a href="">ABOUT</a></li>
+      </ul>
+    </div>
+    <!--[if IE]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="js/vendor/jquery-3.4.1.min.js"><\/script>'
+        );
+		document.forms[0].addEventListener("submit", function(e) {
+			doLogin(this);
+			e.preventDefault();
+		});
+    </script>
+    <script src="js/plugins.js"></script>
+  </body>
+</html>

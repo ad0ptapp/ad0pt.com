@@ -2,8 +2,9 @@ const form = document.getElementById("form");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
-const minLength = 6;
-const maxLength = 25;
+const minLength = 8;
+const maxLength = 128;
+var allowSubmit = false;
 
 // Show input error message
 function showError(input, message) {
@@ -17,6 +18,8 @@ function showError(input, message) {
 function showSuccess(input) {
   const formControl = input.parentElement;
   formControl.className = "form-control success";
+  allowSubmit = true;
+  document.forms['form'].submit();
 }
 
 // Check email is valid
@@ -72,10 +75,12 @@ function getFieldName(input) {
 
 // Submit Event Listener
 form.addEventListener("submit", function (e) {
-  e.preventDefault();
+  if(!allowSubmit) {
+    e.preventDefault();
 
-  checkRequired([password, password2]);
-  checkLength(password, minLength, maxLength);
-  checkEmail(email);
-  checkPasswordMatch(password, password2);
+    checkRequired([password, password2]);
+    checkLength(password, minLength, maxLength);
+    checkEmail(email);
+    checkPasswordMatch(password, password2);
+  }
 });
