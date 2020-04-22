@@ -21,57 +21,16 @@
       href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap"
       rel="stylesheet"
     />
-	
-	<style>
-		.message {
-			color: white;
-			text-align:center;
-			font-weight: 800;
-			font-family: sans-serif;
-			font-size: 12pt;
-		}
-		.message.success {
-			color: #00C000;
-		}
-		.message.error {
-			color:red;
-		}
-	</style>
-	
-	<script>
-		function handleLogin() {
-			var resp = JSON.parse(this.response);
-			var div = document.forms[0].children.message;
-			if(resp.message) {
-				div.innerText = resp.message;
-			}
-			if(resp.success) {
-				div.className = "message success";
-				setTimeout(function(){ window.location.href = "index.php"; }, 1500);
-			} else {
-				div.className = "message error";
-			}
-		}
-		function doLogin(form) {
-			document.forms[0].children.message.innerText = "";
-			var xhr = new XMLHttpRequest();
-			xhr.addEventListener("load", handleLogin);
-			xhr.open("POST", "api/login.php", true);
-			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-			xhr.send(encodeURI("email=" + form.elements.login_email.value + "&password=" + form.elements.login_password.value));
-		}
-	</script>
   </head>
-  <header></header>
   <body>
     <div class="container">
       <img src="images/logo_red_circle.png" alt="ad0pt Logo" class="logo" />
-      <form id="form" class="form">
+      <form>
         <h2>Login With ad0pt</h2>
-		<div id="message" class="message"></div>
+		<div name="message"></div>
         <div class="form-control">
           <label for="login_email">Email</label>
-          <input id="login_email" name="email" type="text" placeholder="Enter email" />
+          <input id="login_email" type="text" placeholder="Enter email" />
           <small>Error message</small>
         </div>
         <div class="form-control">
@@ -79,18 +38,21 @@
           <input
             id="login_password"
             type="password"
-			name="password"
             placeholder="Enter password"
           />
           <small>Error message</small>
         </div>
-        <button id="submitbtn" type="submit">Submit</button>
+        <button id="submit" type="submit">Submit</button>
+        <!-- FOR TESTING ONLY. REMOVE BEFORE PUBLICATION -->
+        <a href="account_creation.html" style="color: white;"
+          >Account Creation</a
+        >
       </form>
     </div>
     <div class="nav">
       <ul class="navl">
-        <li><a href="account_creation.php">PROFILE</a></li>
-        <li><a href="login.php">FEATURED</a></li>
+        <li><a href="profile.html">PROFILE</a></li>
+        <li><a href="index.html">FEATURED</a></li>
         <li><a href="">ABOUT</a></li>
       </ul>
     </div>
@@ -112,11 +74,8 @@
         document.write(
           '<script src="js/vendor/jquery-3.4.1.min.js"><\/script>'
         );
-		document.forms[0].addEventListener("submit", function(e) {
-			doLogin(this);
-			e.preventDefault();
-		});
     </script>
     <script src="js/plugins.js"></script>
+    <script src="js/login.js"></script>
   </body>
 </html>
