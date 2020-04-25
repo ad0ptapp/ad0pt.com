@@ -99,7 +99,8 @@ h2 {
   visibility: visible;
 }
 
-.form button {
+.form button,
+.profile_form button {
   cursor: pointer;
   background-color: var(--red);
   border: 2px solid white;
@@ -176,7 +177,7 @@ label {
   margin-right: 20px;
 }
 
-input[type="text"],
+.profile-container input[type="text"],
 select {
   text-align: center;
   height: 2rem;
