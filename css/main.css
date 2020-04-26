@@ -36,6 +36,16 @@ body {
   height: 100vh;
 }
 
+.featured-container {
+  background-color: blue;
+  overflow-x: hidden;
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .logo {
   width: 20rem;
   display: block;
@@ -185,6 +195,13 @@ select {
 
 #state_dropdown {
   margin-right: 5px;
+}
+
+.post-card {
+  background-color: red;
+  width: 80%;
+  height: 50vh;
+  margin-bottom: 1rem;
 }
 
 /* Utility Classes */
