@@ -8,8 +8,11 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/normalize.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"
+    />
     <link rel="stylesheet" href="css/main.css" />
-
     <!-- Favicon -->
 
     <!-- Fonts -->
@@ -17,57 +20,57 @@
       href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap"
       rel="stylesheet"
     />
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".slider").bxSlider();
+      });
+    </script>
   </head>
   <body>
     <div class="featured-container">
       <div class="post-card">
-        <h4>Post title</h4>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas aut
-          voluptatibus eligendi est accusantium. Tempore mollitia incidunt
-          excepturi accusantium voluptates ea dignissimos. Nesciunt quaerat
-          doloribus iure adipisci cumque maxime magni laboriosam sed nobis
-          deleniti doloremque labore veritatis, id perferendis facilis tenetur.
-          Laboriosam cupiditate ducimus obcaecati, animi omnis sint provident
-          fugiat magnam ab alias architecto temporibus quos amet necessitatibus
-          quia rem ea aliquid! Eaque vero voluptatum ipsam dolore pariatur
-          laudantium, explicabo maiores atque numquam, optio architecto labore
-        </p>
+        <h4 class="animal-name">ANIMAL NAME</h4>
+        <img class="post-img" src="images/animals/post1-fitted.png" />
+        <div class="animal-info-panel">
+          <span class="post-text">Name: NAME</span>
+          <!-- Be sure to leave the <br> tags after this for layout reasons -->
+          <span class="post-text">Age: AGE</span> <br />
+          <span class="post-text">Gender: GENDER</span>
+          <span class="post-text">Weight: WEIGHT</span> <br />
+          <span class="post-text">Species: SPECIES</span> <br />
+          <span class="post-text">Breed: BREED</span> <br />
+          <span class="post-text">Registered: REGISTRATION DATE</span>
+        </div>
+        <br />
+        <div class="owner-info-panel">
+          <span class="post-text">Owner's Name: NAME</span> <br />
+          <span class="post-text">Phone Number: PHONE NUMBER</span>
+        </div>
       </div>
-      <div class="post-card">
-        <h4>Post title</h4>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas aut
-          voluptatibus eligendi est accusantium. Tempore mollitia incidunt
-          excepturi accusantium voluptates ea dignissimos. Nesciunt quaerat
-          doloribus iure adipisci cumque maxime magni laboriosam sed nobis
-          deleniti doloremque labore veritatis, id perferendis facilis tenetur.
-          Laboriosam cupiditate ducimus obcaecati, animi omnis sint provident
-          fugiat magnam ab alias architecto temporibus quos amet necessitatibus
-          quia rem ea aliquid! Eaque vero voluptatum ipsam dolore pariatur
-          laudantium, explicabo maiores atque numquam, optio architecto labore
-          animi debitis natus at veniam magnam autem fugiat earum vel eos
-          quibusdam fuga sit? Assumenda blanditiis id alias culpa velit saepe
-          ratione doloribus rerum.
-        </p>
-      </div>
-      <div class="post-card">
-        <h4>Post title</h4>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas aut
-          voluptatibus eligendi est accusantium. Tempore mollitia incidunt
-          excepturi accusantium voluptates ea dignissimos. Nesciunt quaerat
-          doloribus iure adipisci cumque maxime magni laboriosam sed nobis
-          deleniti doloremque labore veritatis, id perferendis facilis tenetur.
-          Laboriosam cupiditate ducimus obcaecati, animi omnis sint provident
-          fugiat magnam ab alias architecto temporibus quos amet necessitatibus
-          quia rem ea aliquid! Eaque vero voluptatum ipsam dolore pariatur
-          laudantium, explicabo maiores atque numquam, optio architecto labore
-          animi debitis natus at veniam magnam autem fugiat earum vel eos
-          quibusdam fuga sit? Assumenda blanditiis id alias culpa velit saepe
-          ratione doloribus rerum.
-        </p>
-      </div>
+      <div class="featured-container">
+        <div class="post-card">
+          <h4 class="animal-name">ANIMAL NAME</h4>
+          <img class="post-img" src="images/animals/post1-fitted.png" />
+          <div class="animal-info-panel">
+            <span class="post-text">Name: NAME</span>
+            <!-- Be sure to leave the <br> tags after this for layout reasons -->
+            <span class="post-text">Age: AGE</span> <br />
+            <span class="post-text">Gender: GENDER</span>
+            <span class="post-text">Weight: WEIGHT</span> <br />
+            <span class="post-text">Species: SPECIES</span> <br />
+            <span class="post-text">Breed: BREED</span> <br />
+            <span class="post-text">Registered: REGISTRATION DATE</span>
+          </div>
+          <br />
+          <div class="owner-info-panel">
+            <span class="post-text">Owner's Name: NAME</span> <br />
+            <span class="post-text">Phone Number: PHONE NUMBER</span>
+          </div>
+        </div
     </div>
     <div class="nav">
       <ul class="navl">
@@ -76,12 +79,6 @@
         <li><a href="about.html">ABOUT</a></li>
       </ul>
     </div>
-    <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
     <!--[if IE]>
       <p class="browserupgrade">
         You are using an <strong>outdated</strong> browser. Please
