@@ -8,10 +8,6 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
 
     <!-- Favicon -->
 
@@ -22,7 +18,7 @@
     />
   </head>
   <body>
-    <form id="profile_form" class="profile_form" method="post"></form>
+    <form id="profile_form" class="profile_form" method="post">
     <div class="profile-container">
         <!-- USE PHP to insert link to user profile -->
         <div class="field">
@@ -52,7 +48,7 @@
         </div>
         <div class="field">
           <select id="state_dropdown">
-            <option value="" disabled selected>Choose Your State</option>
+            <option value="-1" disabled selected hidden>Choose Your State</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
@@ -122,13 +118,18 @@
             readonly
           />
         </div>
+        <button id="save_changes" type="submit">Save Changes</button>
+                <!-- FOR TESTING ONLY. REMOVE BEFORE PUBLICATION -->
+                <a href="index.html" style="color: white;"
+                >Login</a
+              >
       </form>
     </div>
     <div class="nav">
       <ul class="navl">
         <li><a href="profile.html">PROFILE</a></li>
-        <li><a href="index.html">FEATURED</a></li>
-        <li><a href="">ABOUT</a></li>
+        <li><a href="featured.html">FEATURED</a></li>
+        <li><a href="about.html">ABOUT</a></li>
       </ul>
     </div>
     <!--[if IE]>
@@ -138,19 +139,6 @@
         your experience and security.
       </p>
     <![endif]-->
-    <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      window.jQuery ||
-        document.write(
-          '<script src="js/vendor/jquery-3.4.1.min.js"><\/script>'
-        );
-    </script>
-    <script src="js/plugins.js"></script>
-    <script src="js/profile.js"></script>
+    <!-- <script src="js/profile.js"></script> -->
   </body>
 </html>
