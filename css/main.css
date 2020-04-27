@@ -37,13 +37,12 @@ body {
 }
 
 .featured-container {
-  background-color: blue;
   overflow-x: hidden;
   min-width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 
 .logo {
@@ -148,17 +147,6 @@ h2 {
   font-weight: bold;
 }
 
-.profile-pic {
-  display: block;
-  width: 150px;
-  height: 150px;
-  border: 2px solid var(--red);
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
 .profile-text {
   color: white;
 }
@@ -198,10 +186,52 @@ select {
 }
 
 .post-card {
-  background-color: red;
+  background-color: var(--red);
   width: 80%;
   height: 50vh;
   margin-bottom: 1rem;
+  margin-top: 1rem;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.post-img {
+  margin: 0 auto;
+  margin-bottom: 0.7rem;
+  display: block;
+  width: 300px;
+  height: 200px;
+  border: 2px solid white;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.animal-name {
+  text-align: center;
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.animal-info-panel {
+  margin: 0 auto;
+  text-align: center;
+  width: 90%;
+}
+
+.owner-info-panel {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.post-text {
+  color: white;
+  font-size: 1.2rem;
+  margin-right: 1rem;
 }
 
 /* Utility Classes */
