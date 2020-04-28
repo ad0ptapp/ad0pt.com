@@ -123,6 +123,9 @@ h2 {
   margin-bottom: 1rem;
 }
 
+.form button a {
+  text-decoration: none;
+}
 .nav {
   position: fixed;
   bottom: 0;
@@ -187,15 +190,14 @@ select {
 
 .post-card {
   background-color: var(--red);
-  width: 80%;
-  height: 50vh;
-  margin-bottom: 1rem;
+  width: 95%;
+  height: 50%;
+  margin-bottom: 3rem;
   margin-top: 1rem;
   border: 2px solid white;
   border-radius: 20px;
   padding: 1rem;
 }
-
 .post-img {
   margin: 0 auto;
   margin-bottom: 0.7rem;
@@ -219,7 +221,7 @@ select {
 .animal-info-panel {
   margin: 0 auto;
   text-align: center;
-  width: 90%;
+  width: 100%;
 }
 
 .owner-info-panel {
@@ -234,10 +236,79 @@ select {
   margin-right: 1rem;
 }
 
+#about-panel {
+  margin: 0 auto;
+  width: 90%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 8rem;
+}
+
+#about-panel h4 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+#about-panel h2 {
+  margin-bottom: 1rem;
+}
+
+#social-panel {
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#social-panel i {
+  margin-bottom: 0.8rem;
+  margin-right: 0.8rem;
+}
+
+.social-text {
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
 /* Utility Classes */
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
+}
+
+@media only screen and (min-width: 500px) {
+  .nav {
+    max-width: 1000px;
+  }
+
+  .container {
+    max-width: 800px;
+  }
+
+  .profile-container {
+    height: 50vh;
+  }
+
+  .post-card,
+  #about-panel {
+    max-width: 800px;
+  }
+
+  .post-card {
+    margin-bottom: 5rem;
+  }
 }
